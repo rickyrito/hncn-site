@@ -1,0 +1,1 @@
+{"timeout":0,"data":[{"homedir":"/home/hncn2021","type":"main","user":"hncn2021"},{"type":"logaccess","homedir":"/etc/apache2/logs/domlogs/hncn2021","user":"hncn2021_logs"}],"error":0,"exit_code":0,"action":"fetch","mode":"simple","statusmsg":"Ran adminbin Cpanel/ftp/LISTSTORE","version":"2.4","status":1}

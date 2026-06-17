@@ -1,0 +1,104 @@
+/* queries.css — regras responsivas HNCN */
+
+/* ============================================================
+   Tablets (max 991px)
+   ============================================================ */
+@media screen and (max-width: 991px) {
+    .overlay nav { font-size: 36px; }
+    .overlay ul li a { font-size: 14px; padding: 14px 0; }
+}
+
+/* ============================================================
+   Mobile (max 768px)
+   ============================================================ */
+@media screen and (max-width: 768px) {
+
+    /* Geral */
+    body { overflow-x: hidden; }
+    section { padding: 24px 0; }
+
+    /* Hero e secções — cada uma ocupa pelo menos um ecrã */
+    .hero,
+    .features-section,
+    .features-list,
+    .screenshots,
+    .processo,
+    .contact-section { min-height: 100dvh; }
+
+    /* Hero */
+    .hero { min-height: 100dvh; }
+    .hero-split { flex-direction: column; text-align: center; gap: 20px; padding: 40px 16px; }
+    .hero-divider-v { display: none; }
+    .hero-logo-side { padding-right: 0; }
+    .hero-logo-img { width: 140px; }
+    .hero-text-side { padding-left: 0; }
+    .hero h1 { font-size: 22px; }
+    .hero-sub { font-size: 14px; }
+    .hero-btns { justify-content: center; flex-wrap: wrap; gap: 8px; }
+    .use-btn, .learn-btn { height: 40px; padding: 0 20px; font-size: 13px; }
+
+    /* Sobre nós */
+    .features-section-h1 { font-size: 24px; }
+    .features-bg { min-height: 200px; }
+    .features-info-content { padding: 24px 16px; }
+    .features-details { flex-direction: column; gap: 10px; }
+    .features-desc { font-size: 13px; }
+
+    /* Que trabalhos realizamos */
+    .features-list h1 { font-size: 24px; }
+    .trabalhos-lista { padding: 0 4px; }
+    .trabalho-item { padding: 12px 14px; gap: 12px; }
+    .trabalho-item i { font-size: 20px; }
+    .trabalho-item strong { font-size: 14px; }
+    .trabalho-item p { font-size: 13px; margin: 4px 0 0; }
+
+    /* Portfólio */
+    .screenshots h1 { font-size: 24px; }
+    .fb-feed-wrap { width: 100%; overflow: hidden; }
+    #fb-feed { width: 100% !important; max-width: 100% !important; }
+
+    /* Como trabalhamos */
+    .processo h1 { font-size: 24px; }
+    .processo-header { margin-bottom: 24px; }
+    .processo-steps { flex-direction: column; align-items: center; gap: 20px; }
+    .processo-connector { width: 2px; height: 24px; margin: 0; }
+    .processo-step { max-width: 280px; padding: 0 8px; }
+    .processo-icon { width: 56px; height: 56px; }
+    .processo-icon i { font-size: 22px; }
+
+    /* Contacto */
+    .contact-headline { font-size: 24px; }
+    .contact-subline { font-size: 14px; }
+    .contact-three-cols { grid-template-columns: 1fr; }
+    .contact-col { padding: 20px 16px; border-right: none; border-bottom: 1px solid rgba(255,255,255,0.12); }
+    .contact-col:last-child { border-bottom: none; }
+    .contact-col-value { font-size: 16px; }
+    .contact-form .contact-form-group input,
+    .contact-form .contact-form-group textarea { font-size: 16px; }
+
+    /* Overlay menu */
+    .overlay nav { font-size: 28px; height: 80%; }
+    .overlay ul li a { font-size: 13px; padding: 12px 0; min-width: 100px; }
+
+    /* Footer */
+    .footer-logo img { width: 100px; }
+    .footer-copy { font-size: 12px; }
+
+    /* WhatsApp — só ícone */
+    .whatsapp-float { padding: 14px; border-radius: 50%; bottom: 16px; right: 16px; }
+    .whatsapp-float span { display: none; }
+    .whatsapp-float i { font-size: 26px; }
+}
+
+/* ============================================================
+   Mobile pequeno (max 480px)
+   ============================================================ */
+@media screen and (max-width: 480px) {
+    .hero h1 { font-size: 19px; }
+    .features-section-h1,
+    .features-list h1,
+    .screenshots h1,
+    .processo h1,
+    .contact-headline { font-size: 20px; }
+    .container { padding-left: 12px; padding-right: 12px; }
+}
