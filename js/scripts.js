@@ -1,3 +1,46 @@
+/***************** i18n — internacionalização ******************/
+
+function applyLang(lang) {
+  var t = translations[lang];
+  if (!t) return;
+
+  // Textos normais
+  document.querySelectorAll('[data-i18n]').forEach(function(el) {
+    var key = el.getAttribute('data-i18n');
+    if (t[key] !== undefined) el.textContent = t[key];
+  });
+
+  // Placeholders
+  document.querySelectorAll('[data-i18n-placeholder]').forEach(function(el) {
+    var key = el.getAttribute('data-i18n-placeholder');
+    if (t[key] !== undefined) el.setAttribute('placeholder', t[key]);
+  });
+
+  // Atualizar html lang e botão
+  document.documentElement.lang = lang;
+  var btn = document.getElementById('lang-switcher');
+  if (btn) btn.textContent = lang === 'pt' ? 'EN' : 'PT';
+
+  localStorage.setItem('hncn-lang', lang);
+}
+
+function detectLang() {
+  var saved = localStorage.getItem('hncn-lang');
+  if (saved) return saved;
+  var browser = (navigator.language || navigator.userLanguage || 'pt').toLowerCase();
+  return browser.startsWith('en') ? 'en' : 'pt';
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  var lang = detectLang();
+  applyLang(lang);
+
+  document.getElementById('lang-switcher').addEventListener('click', function() {
+    var current = document.documentElement.lang || 'pt';
+    applyLang(current === 'pt' ? 'en' : 'pt');
+  });
+});
+
 $(document).ready(function () {
 
   /***************** Waypoints — animações ao scroll ******************/
