@@ -109,6 +109,100 @@ $(document).ready(function () {
     }
   });
 
+  /***************** Galeria de portfólio ******************/
+
+  var galleryData = [];
+  var currentAlbum = 0;
+  var currentPhoto = 0;
+
+  function renderTabs() {
+    var tabs = $('#gallery-tabs');
+    tabs.empty();
+    galleryData.forEach(function(album, i) {
+      var btn = $('<button class="gallery-tab">')
+        .text(album.name + ' (' + album.count + ')')
+        .on('click', function() {
+          currentAlbum = i;
+          currentPhoto = 0;
+          $('.gallery-tab').removeClass('active');
+          $(this).addClass('active');
+          renderGrid();
+        });
+      if (i === 0) btn.addClass('active');
+      tabs.append(btn);
+    });
+  }
+
+  function renderGrid() {
+    var grid = $('#gallery-grid');
+    grid.empty();
+    var photos = galleryData[currentAlbum].photos;
+    photos.forEach(function(photo, i) {
+      var item = $('<div class="gallery-item">')
+        .append($('<img>').attr({ src: photo.thumb, alt: photo.caption, loading: 'lazy' }))
+        .on('click', function() { openLightbox(i); });
+      grid.append(item);
+    });
+  }
+
+  function openLightbox(index) {
+    currentPhoto = index;
+    var photo = galleryData[currentAlbum].photos[currentPhoto];
+    $('#lb-img').attr('src', photo.src).attr('alt', photo.caption);
+    $('#lb-caption').text(photo.caption);
+    $('#gallery-lightbox').addClass('open');
+    $('body').css('overflow', 'hidden');
+  }
+
+  function closeLightbox() {
+    $('#gallery-lightbox').removeClass('open');
+    $('body').css('overflow', '');
+  }
+
+  function lbNext() {
+    var photos = galleryData[currentAlbum].photos;
+    currentPhoto = (currentPhoto + 1) % photos.length;
+    var photo = photos[currentPhoto];
+    $('#lb-img').attr('src', photo.src).attr('alt', photo.caption);
+    $('#lb-caption').text(photo.caption);
+  }
+
+  function lbPrev() {
+    var photos = galleryData[currentAlbum].photos;
+    currentPhoto = (currentPhoto - 1 + photos.length) % photos.length;
+    var photo = photos[currentPhoto];
+    $('#lb-img').attr('src', photo.src).attr('alt', photo.caption);
+    $('#lb-caption').text(photo.caption);
+  }
+
+  $('#lb-close').on('click', closeLightbox);
+  $('#lb-next').on('click', lbNext);
+  $('#lb-prev').on('click', lbPrev);
+  $('#gallery-lightbox').on('click', function(e) {
+    if ($(e.target).is('#gallery-lightbox')) closeLightbox();
+  });
+  $(document).on('keydown', function(e) {
+    if (!$('#gallery-lightbox').hasClass('open')) return;
+    if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'ArrowRight') lbNext();
+    if (e.key === 'ArrowLeft') lbPrev();
+  });
+
+  // Carregar galeria
+  $.getJSON('gallery.php', function(data) {
+    $('#gallery-loading').hide();
+    if (!data || data.error || data.length === 0) {
+      $('#gallery-grid').html('<p style="color:#999;padding:20px">Sem álbuns disponíveis.</p>');
+      return;
+    }
+    galleryData = data;
+    renderTabs();
+    renderGrid();
+  }).fail(function() {
+    $('#gallery-loading').hide();
+    $('#gallery-grid').html('<p style="color:#999;padding:20px">Não foi possível carregar o portfólio.</p>');
+  });
+
   /***************** Formulário de contacto ******************/
 
   $('#contactForm').on('submit', function (e) {
