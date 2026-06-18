@@ -19,7 +19,7 @@ function applyLang(lang) {
   // Atualizar html lang e botão
   document.documentElement.lang = lang;
   var btn = document.getElementById('lang-switcher');
-  if (btn) btn.textContent = lang === 'pt' ? 'EN' : 'PT';
+  if (btn) btn.textContent = lang === 'pt' ? '🇬🇧 EN' : '🇵🇹 PT';
 
   localStorage.setItem('hncn-lang', lang);
 }

@@ -2,10 +2,15 @@
 Botão de língua PT/EN
 ========================================================================== */
 .overlay-lang {
+    display: none;
     margin-top: 24px;
     text-align: center;
 }
+.overlay-boxify.open .overlay-lang {
+    display: block;
+}
 .lang-switcher {
+    position: static !important;
     background: transparent;
     color: #fff;
     border: 1px solid rgba(255,255,255,0.5);
@@ -20,6 +25,11 @@ Botão de língua PT/EN
 .lang-switcher:hover {
     background: #73d0da;
     border-color: #73d0da;
+}
+/* Esconder botão de língua fora do overlay */
+body > .lang-switcher,
+body > button.lang-switcher {
+    display: none !important;
 }
 
 /* ! normalize.css v1.0.0 | MIT License | git.io/normalize */
