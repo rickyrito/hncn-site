@@ -149,11 +149,10 @@ $(document).ready(function () {
     var photos = galleryData[currentAlbum].photos;
     var total  = photos.length;
 
-    // Setas no topo
-    var nav   = $('<div class="gallery-nav">');
-    var prevBtn = $('<button class="gallery-nav-btn" id="carousel-prev">').html('&#8249;');
-    var nextBtn = $('<button class="gallery-nav-btn" id="carousel-next">').html('&#8250;');
-    nav.append(prevBtn).append(nextBtn);
+    // Wrapper com posição relativa para as setas laterais
+    var wrap    = $('<div class="gallery-carousel-wrap">');
+    var prevBtn = $('<button class="gallery-nav-btn gallery-nav-prev" id="carousel-prev">').html('&#8249;');
+    var nextBtn = $('<button class="gallery-nav-btn gallery-nav-next" id="carousel-next">').html('&#8250;');
 
     // Track
     var trackWrap = $('<div class="carousel-track-wrap">');
@@ -182,7 +181,8 @@ $(document).ready(function () {
     nextBtn.on('click', function() { carouselOffset++; updateCarousel(); });
 
     trackWrap.append(track);
-    grid.append(nav).append(trackWrap);
+    wrap.append(prevBtn).append(trackWrap).append(nextBtn);
+    grid.append(wrap);
 
     setTimeout(function() { updateCarousel(); }, 50);
   }
