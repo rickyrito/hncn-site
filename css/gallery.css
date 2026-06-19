@@ -30,26 +30,37 @@
   width: 100%;
 }
 
-/* ── Navegação do carrossel (topo) ──────────────────────── */
-.gallery-nav {
-  display: flex;
-  justify-content: center;
-  gap: 24px;
-  margin-bottom: 20px;
+/* ── Wrapper com setas laterais ─────────────────────────── */
+.gallery-carousel-wrap {
+  position: relative;
+  padding: 0 40px;
 }
 
 .gallery-nav-btn {
-  background: none;
+  position: absolute;
+  top: 45%;
+  transform: translateY(-50%);
+  background: rgba(255,255,255,0.95);
   border: none;
-  font-size: 2rem;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  font-size: 1.6rem;
   line-height: 1;
-  color: #333;
+  color: #1a3a5c;
   cursor: pointer;
-  padding: 0 8px;
-  transition: color 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  transition: background 0.2s, opacity 0.2s;
+  z-index: 10;
 }
 
-.gallery-nav-btn:hover  { color: #1a3a5c; }
+.gallery-nav-prev { left: 0; }
+.gallery-nav-next { right: 0; }
+
+.gallery-nav-btn:hover    { background: #fff; box-shadow: 0 4px 12px rgba(0,0,0,0.2); }
 .gallery-nav-btn:disabled { opacity: 0.2; cursor: default; }
 
 /* ── Track do carrossel ─────────────────────────────────── */
