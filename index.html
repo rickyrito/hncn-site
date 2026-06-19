@@ -47,6 +47,7 @@
 <!-- CSS personalizado -->
 <link href="css/style.css" rel="stylesheet">
 <link href="css/queries.css" rel="stylesheet">
+<link href="css/gallery.css?v=5" rel="stylesheet">
 
 </head>
 
@@ -183,29 +184,45 @@
     <div class="row">
       <div class="col-md-12 text-center">
         <h1 data-i18n="portfolio.title"></h1>
-        <div id="fb-root"></div>
-        <script async defer crossorigin="anonymous"
-          src="https://connect.facebook.net/pt_PT/sdk.js#xfbml=1&version=v21.0&appId=1350592076994262">
-        </script>
-        <div class="fb-feed-wrap">
-          <div class="fb-page"
-            data-href="https://www.facebook.com/profile.php?id=61552178096246"
-            data-tabs="timeline"
-            data-width="700"
-            data-height="700"
-            data-small-header="false"
-            data-adapt-container-width="true"
-            data-hide-cover="false"
-            data-show-facepile="false">
-            <blockquote cite="https://www.facebook.com/profile.php?id=61552178096246" class="fb-xfbml-parse-ignore">
-              <a href="https://www.facebook.com/profile.php?id=61552178096246">HNCN construções</a>
-            </blockquote>
+      </div>
+    </div>
+    <!-- Abas dos álbuns -->
+    <div class="row">
+      <div class="col-12">
+        <div class="gallery-tabs" id="gallery-tabs"></div>
+      </div>
+    </div>
+    <!-- Grelha de fotos -->
+    <div class="row" id="gallery-grid-row">
+      <div class="col-12">
+        <div class="gallery-grid" id="gallery-grid">
+          <div class="gallery-loading" id="gallery-loading">
+            <i class="fa fa-spinner fa-spin"></i>
           </div>
         </div>
       </div>
     </div>
+    <!-- Link para Facebook -->
+    <div class="row mt-3">
+      <div class="col-12 text-center">
+        <a href="https://www.facebook.com/profile.php?id=61552178096246" target="_blank" rel="noopener" class="gallery-fb-link">
+          <i class="fa fa-facebook"></i> <span data-i18n="portfolio.fb_link"></span>
+        </a>
+      </div>
+    </div>
   </div>
 </section>
+
+<!-- Lightbox -->
+<div class="gallery-lightbox" id="gallery-lightbox">
+  <button class="lb-close" id="lb-close">&times;</button>
+  <button class="lb-prev" id="lb-prev">&#8249;</button>
+  <button class="lb-next" id="lb-next">&#8250;</button>
+  <div class="lb-img-wrap">
+    <img src="" alt="" id="lb-img">
+    <p class="lb-caption" id="lb-caption"></p>
+  </div>
+</div>
 
 <section class="processo" id="processo">
   <div class="container">
@@ -366,7 +383,7 @@
 <script src="js/translations.js"></script>
 
 <!-- Scripts personalizados -->
-<script src="js/scripts.js"></script>
+<script src="js/scripts.js?v=2"></script>
 
 <!-- WhatsApp flutuante -->
 <a class="whatsapp-float" href="https://wa.me/351963516708?text=Olá%2C%20gostaria%20de%20obter%20mais%20informações." target="_blank" rel="noopener" aria-label="Contactar via WhatsApp">

@@ -1,0 +1,6 @@
+.DS_Store
+_notes/
+*.lock
+gallery-cache.json
+fb-token.json
+fb-config.php
