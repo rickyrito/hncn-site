@@ -114,6 +114,14 @@ $(document).ready(function () {
   var galleryData = [];
   var currentAlbum = 0;
   var currentPhoto = 0;
+  var carouselOffset = 0;
+
+  function getVisibleCount() {
+    var w = $(window).width();
+    if (w < 576) return 1;
+    if (w < 992) return 2;
+    return 4;
+  }
 
   function renderTabs() {
     var tabs = $('#gallery-tabs');
@@ -126,24 +134,76 @@ $(document).ready(function () {
           currentPhoto = 0;
           $('.gallery-tab').removeClass('active');
           $(this).addClass('active');
-          renderGrid();
+          renderCarousel();
         });
       if (i === 0) btn.addClass('active');
       tabs.append(btn);
     });
   }
 
-  function renderGrid() {
+  function renderCarousel() {
     var grid = $('#gallery-grid');
     grid.empty();
+    carouselOffset = 0;
+
     var photos = galleryData[currentAlbum].photos;
+    var total  = photos.length;
+
+    // Setas no topo
+    var nav   = $('<div class="gallery-nav">');
+    var prevBtn = $('<button class="gallery-nav-btn" id="carousel-prev">').html('&#8249;');
+    var nextBtn = $('<button class="gallery-nav-btn" id="carousel-next">').html('&#8250;');
+    nav.append(prevBtn).append(nextBtn);
+
+    // Track
+    var trackWrap = $('<div class="carousel-track-wrap">');
+    var track     = $('<div class="carousel-track" id="gallery-carousel-track">');
+
     photos.forEach(function(photo, i) {
-      var item = $('<div class="gallery-item">')
-        .append($('<img>').attr({ src: photo.thumb, alt: photo.caption, loading: 'lazy' }))
+      var caption = photo.caption || '';
+      var card = $('<div class="gallery-card">')
         .on('click', function() { openLightbox(i); });
-      grid.append(item);
+
+      var inner = $('<div class="gallery-card-inner">');
+      inner.append(
+        $('<img class="gallery-card-img">').attr({ src: photo.thumb, alt: caption, loading: 'lazy' })
+      );
+      var body = $('<div class="gallery-card-body">');
+      if (caption) {
+        body.append($('<p class="gallery-card-caption">').text(caption));
+      }
+      body.append($('<span class="gallery-card-num">').text((i + 1) + ' / ' + total));
+      inner.append(body);
+      card.append(inner);
+      track.append(card);
     });
+
+    prevBtn.on('click', function() { carouselOffset--; updateCarousel(); });
+    nextBtn.on('click', function() { carouselOffset++; updateCarousel(); });
+
+    trackWrap.append(track);
+    grid.append(nav).append(trackWrap);
+
+    setTimeout(function() { updateCarousel(); }, 50);
   }
+
+  function updateCarousel() {
+    var photos  = galleryData[currentAlbum].photos;
+    var visible = getVisibleCount();
+    var max     = Math.max(0, photos.length - visible);
+    carouselOffset = Math.min(Math.max(0, carouselOffset), max);
+
+    var slideW = Math.floor($('.carousel-track-wrap').width() / visible);
+
+    $('.gallery-card').css({ 'width': slideW + 'px', 'flex': '0 0 ' + slideW + 'px' });
+    $('#gallery-carousel-track').css('transform', 'translateX(-' + (slideW * carouselOffset) + 'px)');
+    $('#carousel-prev').prop('disabled', carouselOffset === 0);
+    $('#carousel-next').prop('disabled', carouselOffset >= max);
+  }
+
+  $(window).on('resize', function() {
+    if (galleryData.length > 0) updateCarousel();
+  });
 
   function openLightbox(index) {
     currentPhoto = index;
@@ -197,7 +257,7 @@ $(document).ready(function () {
     }
     galleryData = data;
     renderTabs();
-    renderGrid();
+    renderCarousel();
   }).fail(function() {
     $('#gallery-loading').hide();
     $('#gallery-grid').html('<p style="color:#999;padding:20px">Não foi possível carregar o portfólio.</p>');

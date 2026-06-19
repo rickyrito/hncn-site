@@ -24,44 +24,102 @@
   color: #fff;
 }
 
-/* ── Grelha de fotos ────────────────────────────────────── */
+/* ── Container principal ────────────────────────────────── */
 #gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 12px;
-}
-
-.gallery-item {
-  position: relative;
-  cursor: pointer;
-  overflow: hidden;
-  border-radius: 4px;
-  height: 260px;
-}
-
-.gallery-item img {
+  display: block !important;
   width: 100%;
-  height: 100%;
+}
+
+/* ── Navegação do carrossel (topo) ──────────────────────── */
+.gallery-nav {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin-bottom: 20px;
+}
+
+.gallery-nav-btn {
+  background: none;
+  border: none;
+  font-size: 2rem;
+  line-height: 1;
+  color: #333;
+  cursor: pointer;
+  padding: 0 8px;
+  transition: color 0.2s;
+}
+
+.gallery-nav-btn:hover  { color: #1a3a5c; }
+.gallery-nav-btn:disabled { opacity: 0.2; cursor: default; }
+
+/* ── Track do carrossel ─────────────────────────────────── */
+.carousel-track-wrap {
+  overflow: hidden;
+  width: 100%;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.4s ease;
+}
+
+/* ── Cards ──────────────────────────────────────────────── */
+.gallery-card {
+  flex-shrink: 0;
+  padding: 0 8px;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+.gallery-card-inner {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.10);
+  overflow: hidden;
+  transition: box-shadow 0.3s;
+}
+
+.gallery-card:hover .gallery-card-inner {
+  box-shadow: 0 6px 24px rgba(0,0,0,0.18);
+}
+
+.gallery-card-img {
+  width: 100%;
+  height: 220px;
   object-fit: cover;
   display: block;
-  opacity: 0.88;
-  transition: opacity 0.3s, transform 0.3s;
+  transition: opacity 0.3s;
 }
 
-.gallery-item:hover img {
-  opacity: 1;
-  transform: scale(1.03);
+.gallery-card:hover .gallery-card-img { opacity: 0.92; }
+
+.gallery-card-body {
+  padding: 14px 16px 16px;
+  text-align: center;
+}
+
+.gallery-card-caption {
+  font-size: 0.88rem;
+  color: #555;
+  margin: 0 0 6px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.gallery-card-num {
+  font-size: 0.8rem;
+  color: #1a3a5c;
+  font-weight: 600;
 }
 
 /* ── Responsive ─────────────────────────────────────────── */
 @media (max-width: 991px) {
-  #gallery-grid { grid-template-columns: repeat(2, 1fr); }
-  .gallery-item  { height: 220px; }
+  .gallery-card-img { height: 180px; }
 }
 
 @media (max-width: 575px) {
-  #gallery-grid { grid-template-columns: 1fr; }
-  .gallery-item { height: 200px; }
+  .gallery-card-img { height: 200px; }
 }
 
 /* ── Lightbox ───────────────────────────────────────────── */
