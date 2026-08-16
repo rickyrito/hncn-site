@@ -4,3 +4,4 @@ _notes/
 gallery-cache.json
 fb-token.json
 fb-config.php
+.DS_Store
