@@ -654,7 +654,7 @@ Hero
 .hero {
     position: relative;
     min-height: 100dvh;
-    background: rgb(40, 70, 102) url('../img/projetos/25eada64-98ca-4b3f-870e-c3eda38e3503.jpg') no-repeat center center;
+    background: rgb(40, 70, 102) url('../img/stock/hero-frame-worker.jpg') no-repeat 30% 35%;
     background-size: cover;
     color: #fff;
     display: flex;
@@ -1091,7 +1091,10 @@ Processo
 Contact
 ========================================================================== */
 .contact {
-    background-color: #17293d;
+    background:
+        linear-gradient(135deg, rgba(15,27,40,0.93) 0%, rgba(23,41,61,0.90) 55%, rgba(90,62,20,0.55) 100%),
+        #17293d url('../img/stock/contact-kitchen-reno.jpg') no-repeat center center;
+    background-size: cover;
     min-height: 100dvh;
 }
 .contact-wrap {
