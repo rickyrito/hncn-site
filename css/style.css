@@ -1030,82 +1030,76 @@ Processo
     margin: 0;
     padding: 0;
 }
-.processo-header {
-    margin-bottom: 40px;
-    padding: 64px 24px;
-    border-radius: 14px;
-    background:
-        linear-gradient(135deg, rgba(15,27,40,0.88) 0%, rgba(23,41,61,0.82) 55%, rgba(90,62,20,0.5) 100%),
-        url('../img/stock/processo-checklist.jpg') no-repeat center 25%;
-    background-size: cover;
-}
-.processo-header h1 { color: #fff; }
-.processo-steps {
+.processo-header { margin-bottom: 44px; }
+
+/* ── Blocos alternados (zigzag) ─────────────────────────────── */
+.processo-zigzag {
     display: flex;
-    align-items: flex-start;
-    justify-content: center;
+    flex-direction: column;
+    gap: 56px;
 }
-.processo-step {
-    flex: 1;
-    text-align: center;
-    padding: 0 16px;
-    max-width: 220px;
-}
-.processo-connector {
-    flex-shrink: 0;
-    width: 60px;
-    height: 2px;
-    background: #e2e8f0;
-    margin-top: 36px;
-}
-.processo-icon {
-    width: 72px;
-    height: 72px;
-    border-radius: 50%;
-    background: #17293d;
+.processo-row {
     display: flex;
     align-items: center;
-    justify-content: center;
-    margin: 0 auto 16px;
+    gap: 48px;
 }
-.processo-icon i {
-    font-size: 28px;
-    color: #fff;
+.processo-row--reverse {
+    flex-direction: row-reverse;
 }
-.processo-icon--last {
-    background: #c9903f;
+.processo-row-media {
+    flex: 0 0 42%;
+    height: 260px;
+    border-radius: 14px;
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 14px 32px rgba(23,41,61,0.16);
+    position: relative;
 }
-.processo-step-num {
-    font-size: 11px;
+.processo-row-media::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 14px;
+    border: 1px solid rgba(255,255,255,0.2);
+    pointer-events: none;
+}
+.processo-row-content {
+    flex: 1;
+    position: relative;
+}
+.processo-row-num {
+    display: block;
+    font-family: 'Fraunces', Georgia, serif;
+    font-size: 56px;
     font-weight: 600;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    color: #c9903f;
-    margin-bottom: 6px;
+    line-height: 1;
+    color: #f0e2c9;
+    -webkit-text-stroke: 1.5px #c9903f;
+    margin-bottom: 8px;
 }
 .processo-step-title {
-    font-size: 15px;
+    font-size: 20px;
     font-weight: 600;
     color: #17293d;
-    margin: 0 0 8px;
+    margin: 0 0 10px;
 }
 .processo-step-desc {
-    font-size: 13px;
+    font-size: 14.5px;
     color: #666;
-    line-height: 1.6;
+    line-height: 1.7;
     margin: 0;
+    max-width: 420px;
 }
 @media (max-width: 768px) {
-    .processo-steps {
+    .processo-zigzag { gap: 36px; }
+    .processo-row,
+    .processo-row--reverse {
         flex-direction: column;
-        align-items: center;
-        gap: 24px;
+        text-align: center;
+        gap: 20px;
     }
-    .processo-connector {
-        width: 2px;
-        height: 32px;
-        margin: 0;
-    }
+    .processo-row-media { flex-basis: auto; width: 100%; height: 200px; }
+    .processo-step-desc { max-width: 100%; }
 }
 
 /* ==========================================================================

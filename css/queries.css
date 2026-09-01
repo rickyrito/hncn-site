@@ -60,12 +60,9 @@
 
     /* Como trabalhamos */
     .processo h1 { font-size: 24px; }
-    .processo-header { margin-bottom: 24px; padding: 40px 16px; border-radius: 10px; }
-    .processo-steps { flex-direction: column; align-items: center; gap: 20px; }
-    .processo-connector { width: 2px; height: 24px; margin: 0; }
-    .processo-step { max-width: 280px; padding: 0 8px; }
-    .processo-icon { width: 56px; height: 56px; }
-    .processo-icon i { font-size: 22px; }
+    .processo-header { margin-bottom: 24px; }
+    .processo-row-num { font-size: 40px; }
+    .processo-step-title { font-size: 17px; }
 
     /* Contacto */
     .contact-headline { font-size: 24px; }
