@@ -9,8 +9,8 @@
 
 .gallery-tab {
   background: transparent;
-  border: 2px solid #1a3a5c;
-  color: #1a3a5c;
+  border: 2px solid #17293d;
+  color: #17293d;
   border-radius: 999px;
   padding: 6px 20px;
   font-size: 0.9rem;
@@ -20,7 +20,8 @@
 
 .gallery-tab.active,
 .gallery-tab:hover {
-  background: #1a3a5c;
+  background: #c9903f;
+  border-color: #c9903f;
   color: #fff;
 }
 
@@ -47,7 +48,7 @@
   height: 36px;
   font-size: 1.6rem;
   line-height: 1;
-  color: #1a3a5c;
+  color: #17293d;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -120,7 +121,7 @@
 
 .gallery-card-num {
   font-size: 0.8rem;
-  color: #1a3a5c;
+  color: #17293d;
   font-weight: 600;
 }
 

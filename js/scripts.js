@@ -41,6 +41,31 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
+/***************** Reveal ao scroll (fade/slide-in) ******************/
+
+document.addEventListener('DOMContentLoaded', function () {
+  var revealSelectors = '.trabalho-item, .processo-step, .contact-col, .features-info-content, .features-section-h1, .features-list h1, .screenshots h1, .processo h1, .contact-headline';
+  var revealEls = document.querySelectorAll(revealSelectors);
+
+  if (!('IntersectionObserver' in window) || revealEls.length === 0) return;
+
+  revealEls.forEach(function (el, i) {
+    el.classList.add('reveal');
+    el.style.transitionDelay = (i % 4) * 60 + 'ms';
+  });
+
+  var observer = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+
+  revealEls.forEach(function (el) { observer.observe(el); });
+});
+
 $(document).ready(function () {
 
   /***************** Waypoints — animações ao scroll ******************/

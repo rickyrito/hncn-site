@@ -6,6 +6,7 @@
 @media screen and (max-width: 991px) {
     .overlay nav { font-size: 36px; }
     .overlay ul li a { font-size: 14px; padding: 14px 0; }
+    .trabalhos-lista { grid-template-columns: repeat(2, 1fr); }
 }
 
 /* ============================================================
@@ -46,9 +47,9 @@
 
     /* Que trabalhos realizamos */
     .features-list h1 { font-size: 24px; }
-    .trabalhos-lista { padding: 0 4px; }
-    .trabalho-item { padding: 12px 14px; gap: 12px; }
-    .trabalho-item i { font-size: 20px; }
+    .trabalhos-lista { grid-template-columns: 1fr; padding: 0 4px; gap: 12px; }
+    .trabalho-item { padding: 18px 16px; }
+    .trabalho-item i { width: 46px; height: 46px; font-size: 18px; margin-bottom: 8px; }
     .trabalho-item strong { font-size: 14px; }
     .trabalho-item p { font-size: 13px; margin: 4px 0 0; }
 
@@ -81,7 +82,7 @@
     .overlay ul li a { font-size: 13px; padding: 12px 0; min-width: 100px; }
 
     /* Footer */
-    .footer-logo img { width: 100px; }
+    .footer-logo-img { width: 100px; }
     .footer-copy { font-size: 12px; }
 
     /* WhatsApp — só ícone */

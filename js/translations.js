@@ -5,6 +5,9 @@ const translations = {
     'hero.sub':         'Construções Lda',
     'hero.btn.contact': 'Contacte-nos',
     'hero.btn.about':   'Sobre a HNCN',
+    'hero.trust.1':     'Equipa profissional e experiente',
+    'hero.trust.2':     'Acompanhamento em cada fase',
+    'hero.trust.3':     'Prazos e orçamentos cumpridos',
 
     // Sobre nós
     'about.title': 'Sobre nós',
@@ -62,6 +65,7 @@ const translations = {
     'contact.error':         'Erro ao enviar. Tente novamente ou contacte-nos diretamente.',
 
     // Footer
+    'footer.tagline': 'Construção e remodelação com rigor, confiança e cuidado ao detalhe.',
     'footer.copy': '© 2026 HNCN Construções Lda. Todos os direitos reservados.',
 
     // Overlay nav
@@ -82,6 +86,9 @@ const translations = {
     'hero.sub':         'Construction Ltd',
     'hero.btn.contact': 'Contact us',
     'hero.btn.about':   'About HNCN',
+    'hero.trust.1':     'Experienced, professional team',
+    'hero.trust.2':     'Support at every step',
+    'hero.trust.3':     'Deadlines & budgets honoured',
 
     // About
     'about.title': 'About us',
@@ -139,6 +146,7 @@ const translations = {
     'contact.error':         'Error sending message. Please try again or contact us directly.',
 
     // Footer
+    'footer.tagline': 'Construction and renovation with rigour, trust and attention to detail.',
     'footer.copy': '© 2026 HNCN Construções Lda. All rights reserved.',
 
     // Nav

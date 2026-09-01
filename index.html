@@ -43,7 +43,7 @@
 <link href="css/animate.css" rel="stylesheet">
 
 <!-- Google Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <!-- CSS personalizado -->
 <link href="css/style.css" rel="stylesheet">
@@ -74,6 +74,11 @@
           <a href="#contact" class="use-btn" data-i18n="hero.btn.contact"></a>
           <a href="#features-intro" class="learn-btn" onclick="event.preventDefault();document.getElementById('features-intro').scrollIntoView({behavior:'smooth',block:'start'});"><span data-i18n="hero.btn.about"></span> <i class="fa fa-arrow-down"></i></a>
         </div>
+        <ul class="hero-trust">
+          <li><i class="fa fa-shield-alt"></i><span data-i18n="hero.trust.1"></span></li>
+          <li><i class="fa fa-handshake"></i><span data-i18n="hero.trust.2"></span></li>
+          <li><i class="fa fa-clock"></i><span data-i18n="hero.trust.3"></span></li>
+        </ul>
       </div>
     </div>
   </section>
@@ -340,11 +345,21 @@
 </section>
 
 <footer class="footer">
-  <div class="container text-center">
-    <h1 class="footer-logo"><img src="img/hncn_logo_new.png" alt="HNCN Logo"></h1>
-    <div class="footer-social">
-      <a href="https://www.facebook.com/profile.php?id=61552178096246" target="_blank" rel="noopener" aria-label="Facebook HNCN"><i class="fa fa-facebook"></i></a>
-      <a href="https://wa.me/351963516708" target="_blank" rel="noopener" aria-label="WhatsApp HNCN"><i class="fa fa-whatsapp"></i></a>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="img/hncn_logo_new.png" alt="HNCN Logo" class="footer-logo-img">
+        <p class="footer-tagline" data-i18n="footer.tagline"></p>
+      </div>
+      <div class="footer-contact">
+        <a href="tel:+351918493245"><i class="fa fa-phone"></i> 918 493 245</a>
+        <a href="mailto:geral@hncn.pt"><i class="fa fa-envelope"></i> geral@hncn.pt</a>
+        <span><i class="fa fa-map-marker"></i> Caxarias, Santarém</span>
+      </div>
+      <div class="footer-social">
+        <a href="https://www.facebook.com/profile.php?id=61552178096246" target="_blank" rel="noopener" aria-label="Facebook HNCN"><i class="fa fa-facebook"></i></a>
+        <a href="https://wa.me/351963516708" target="_blank" rel="noopener" aria-label="WhatsApp HNCN"><i class="fa fa-whatsapp"></i></a>
+      </div>
     </div>
     <p class="footer-copy" data-i18n="footer.copy"></p>
   </div>
