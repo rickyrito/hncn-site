@@ -40,7 +40,7 @@
 
     /* Sobre nós */
     .features-section-h1 { font-size: 24px; }
-    .features-bg { min-height: 200px; }
+    .features-bg { min-height: 200px; margin: 16px 16px 0; }
     .features-info-content { padding: 24px 16px; }
     .features-details { flex-direction: column; gap: 10px; }
     .features-desc { font-size: 13px; }
@@ -60,7 +60,7 @@
 
     /* Como trabalhamos */
     .processo h1 { font-size: 24px; }
-    .processo-header { margin-bottom: 24px; }
+    .processo-header { margin-bottom: 24px; padding: 40px 16px; border-radius: 10px; }
     .processo-steps { flex-direction: column; align-items: center; gap: 20px; }
     .processo-connector { width: 2px; height: 24px; margin: 0; }
     .processo-step { max-width: 280px; padding: 0 8px; }

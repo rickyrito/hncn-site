@@ -821,8 +821,20 @@ Features Slider
 .features-bg {
     min-height: 420px;
     height: 100%;
-    background: url('../img/projetos/a1defd03-329f-48ee-9330-e6ed1f342156.jpg') no-repeat center center;
+    margin: 28px;
+    border-radius: 14px;
+    box-shadow: 0 16px 36px rgba(23,41,61,0.2);
+    background: url('../img/stock/about-handshake.jpg') no-repeat center center;
     background-size: cover;
+    position: relative;
+}
+.features-bg::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 14px;
+    border: 1px solid rgba(255,255,255,0.25);
+    pointer-events: none;
 }
 .features-info-col {
     background: #fff;
@@ -1018,7 +1030,16 @@ Processo
     margin: 0;
     padding: 0;
 }
-.processo-header { margin-bottom: 40px; }
+.processo-header {
+    margin-bottom: 40px;
+    padding: 64px 24px;
+    border-radius: 14px;
+    background:
+        linear-gradient(135deg, rgba(15,27,40,0.88) 0%, rgba(23,41,61,0.82) 55%, rgba(90,62,20,0.5) 100%),
+        url('../img/stock/processo-checklist.jpg') no-repeat center 25%;
+    background-size: cover;
+}
+.processo-header h1 { color: #fff; }
 .processo-steps {
     display: flex;
     align-items: flex-start;
