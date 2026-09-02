@@ -36,6 +36,7 @@ const translations = {
 
     // Portfólio
     'portfolio.title': 'Portofólio',
+    'portfolio.fb_link': 'Ver mais no Facebook',
 
     // Como trabalhamos
     'process.title':    'Como trabalhamos',
@@ -51,6 +52,21 @@ const translations = {
     'process.4.num':    'Passo 4',
     'process.4.title':  'Entrega',
     'process.4.desc':   'Entregamos a obra concluída, com acompanhamento pós-entrega e garantia de qualidade.',
+
+    // Perguntas frequentes
+    'faq.title': 'Perguntas frequentes',
+    'faq.1.q': 'Quanto tempo demora uma obra?',
+    'faq.1.a': 'O prazo depende da dimensão e complexidade do projeto. Após a visita ao local, apresentamos um cronograma junto com o orçamento, para saber exatamente o que esperar.',
+    'faq.2.q': 'Como funciona o orçamento?',
+    'faq.2.a': 'Apresentamos sempre um orçamento detalhado antes do início da obra, para conhecer o valor total previsto. Qualquer alteração ao que foi combinado é sempre discutida convosco antes de avançar.',
+    'faq.3.q': 'Dão garantia sobre o trabalho realizado?',
+    'faq.3.a': 'Sim, o nosso trabalho é acompanhado após a entrega da obra. As condições de garantia são explicadas no momento do orçamento.',
+    'faq.4.q': 'Em que zonas trabalham?',
+    'faq.4.a': 'Atuamos principalmente em Lisboa, Ourém e Santarém.',
+    'faq.5.q': 'Fazem obras públicas e privadas?',
+    'faq.5.a': 'Sim. Realizamos tanto obras privadas (remodelações residenciais e comerciais) como obras públicas, sempre em conformidade com as normas aplicáveis.',
+    'faq.6.q': 'Como funciona o pagamento?',
+    'faq.6.a': 'As condições de pagamento, incluindo eventual sinal, são definidas e acordadas convosco no momento do orçamento, antes do início dos trabalhos.',
 
     // Contacto
     'contact.headline':      'Pronto para começar o seu projeto?',
@@ -76,6 +92,7 @@ const translations = {
     'nav.services':  'Serviços',
     'nav.portfolio': 'Portofólio',
     'nav.process':   'Processo',
+    'nav.faq':       'FAQ',
     'nav.contact':   'Contactos',
     'nav.cta':       'Pedir orçamento',
 
@@ -120,6 +137,7 @@ const translations = {
 
     // Portfolio
     'portfolio.title': 'Portfolio',
+    'portfolio.fb_link': 'See more on Facebook',
 
     // Process
     'process.title':    'How we work',
@@ -135,6 +153,21 @@ const translations = {
     'process.4.num':    'Step 4',
     'process.4.title':  'Handover',
     'process.4.desc':   'We deliver the completed project with post-handover support and quality guarantee.',
+
+    // FAQ
+    'faq.title': 'Frequently asked questions',
+    'faq.1.q': 'How long does a project take?',
+    'faq.1.a': 'It depends on the size and complexity of the project. After visiting the site, we provide a timeline along with the quote, so you know exactly what to expect.',
+    'faq.2.q': 'How does the quote work?',
+    'faq.2.a': 'We always provide a detailed quote before starting work, so you know the total expected cost. Any change to what was agreed is always discussed with you before proceeding.',
+    'faq.3.q': 'Do you guarantee the work?',
+    'faq.3.a': 'Yes, our work is followed up after handover. Warranty terms are explained when we provide the quote.',
+    'faq.4.q': 'What areas do you cover?',
+    'faq.4.a': 'We mainly work in the Lisbon, Ourém and Santarém areas.',
+    'faq.5.q': 'Do you do public and private works?',
+    'faq.5.a': 'Yes. We carry out both private works (residential and commercial renovation) and public works, always in line with applicable regulations.',
+    'faq.6.q': 'How does payment work?',
+    'faq.6.a': 'Payment terms, including any deposit, are defined and agreed with you when we provide the quote, before work begins.',
 
     // Contact
     'contact.headline':      'Ready to start your project?',
@@ -160,6 +193,7 @@ const translations = {
     'nav.services':  'Services',
     'nav.portfolio': 'Portfolio',
     'nav.process':   'Process',
+    'nav.faq':       'FAQ',
     'nav.contact':   'Contact',
     'nav.cta':       'Get a quote',
 

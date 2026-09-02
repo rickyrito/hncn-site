@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', function() {
 /***************** Reveal ao scroll (fade/slide-in) ******************/
 
 document.addEventListener('DOMContentLoaded', function () {
-  var revealSelectors = '.trabalho-item, .processo-row, .contact-col, .features-info-content, .features-section-h1, .features-list h1, .screenshots h1, .processo h1, .contact-headline';
+  var revealSelectors = '.trabalho-item, .processo-row, .faq-item, .contact-col, .features-info-content, .features-section-h1, .features-list h1, .screenshots h1, .processo h1, .faq h1, .contact-headline';
   var revealEls = document.querySelectorAll(revealSelectors);
 
   if (!('IntersectionObserver' in window) || revealEls.length === 0) return;
@@ -120,6 +120,15 @@ $(document).ready(function () {
   $('.overlay').click(function () {
     $('.nav-toggle').removeClass('active');
     $('.overlay-boxify').removeClass('open');
+  });
+
+  /***************** FAQ — acordeão ******************/
+
+  $('.faq-question').on('click', function () {
+    var $item = $(this).closest('.faq-item');
+    var isOpen = $item.hasClass('open');
+    $item.toggleClass('open');
+    $(this).attr('aria-expanded', !isOpen);
   });
 
   /***************** Smooth Scrolling — força scroll ao topo do elemento ******************/
