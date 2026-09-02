@@ -154,7 +154,7 @@ $(document).ready(function () {
     var w = $(window).width();
     if (w < 576) return 1;
     if (w < 992) return 2;
-    return 4;
+    return 3;
   }
 
   function renderTabs() {
