@@ -9,6 +9,8 @@
     .trabalhos-lista { grid-template-columns: repeat(2, 1fr); }
 
     /* Barra de navegação — só logo, língua e menu de hambúrguer */
+    body { padding-top: 60px; }
+    .hero { min-height: calc(100dvh - 60px); }
     .site-nav-inner { height: 60px; padding: 0 16px; }
     .site-nav-logo img { height: 30px; }
     .site-nav-links,
@@ -39,7 +41,7 @@
     .contact-section { min-height: 100dvh; }
 
     /* Hero */
-    .hero { min-height: 100dvh; }
+    .hero { min-height: calc(100dvh - 60px); }
     .hero-split { flex-direction: column; text-align: center; gap: 20px; padding: 40px 16px; }
     .hero-divider-v { display: none; }
     .hero-logo-side { padding-right: 0; }

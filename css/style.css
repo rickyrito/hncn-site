@@ -569,13 +569,19 @@ Buttons
 Navigation
 ========================================================================== */
 .site-nav {
-    position: sticky;
+    position: fixed;
     top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
     z-index: 100000;
     background: rgba(250, 248, 244, 0.96);
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
     box-shadow: 0 2px 14px rgba(23,41,61,0.1);
+}
+body {
+    padding-top: 72px;
 }
 .site-nav-inner {
     max-width: 1240px;
@@ -728,7 +734,7 @@ Hero
 ========================================================================== */
 .hero {
     position: relative;
-    min-height: 100dvh;
+    min-height: calc(100dvh - 72px);
     background: rgb(40, 70, 102) url('../img/stock/hero-frame-worker.jpg') no-repeat 30% 35%;
     background-size: cover;
     color: #fff;
