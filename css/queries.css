@@ -4,8 +4,7 @@
    Tablets (max 991px)
    ============================================================ */
 @media screen and (max-width: 991px) {
-    .overlay nav { font-size: 36px; }
-    .overlay ul li a { font-size: 14px; padding: 14px 0; }
+    .overlay-links li a { font-size: 23px; padding: 17px 2px; }
     .trabalhos-lista { grid-template-columns: repeat(2, 1fr); }
 
     /* Barra de navegação — só logo, língua e menu de hambúrguer */
@@ -89,8 +88,8 @@
     .contact-form .contact-form-group textarea { font-size: 16px; }
 
     /* Overlay menu */
-    .overlay nav { font-size: 28px; height: 80%; }
-    .overlay ul li a { font-size: 13px; padding: 12px 0; min-width: 100px; }
+    .overlay-links li a { font-size: 19px; gap: 12px; padding: 15px 2px; }
+    .overlay-links li a::before { font-size: 10px; }
 
     /* Footer */
     .footer-logo-img { width: 100px; }
