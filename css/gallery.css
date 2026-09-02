@@ -8,9 +8,6 @@
 }
 
 .gallery-tab {
-  position: relative;
-  z-index: 0;
-  overflow: hidden;
   background: transparent;
   border: 1.5px solid #17293d;
   color: #17293d;
@@ -22,29 +19,14 @@
   letter-spacing: 0.4px;
   text-transform: uppercase;
   cursor: pointer;
-  transition: color 0.3s ease, border-color 0.3s ease;
-}
-
-.gallery-tab::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  background: #c9903f;
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.35s ease;
+  transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
 }
 
 .gallery-tab.active,
 .gallery-tab:hover {
+  background-color: #c9903f;
   border-color: #c9903f;
   color: #fff;
-}
-
-.gallery-tab.active::before,
-.gallery-tab:hover::before {
-  transform: scaleX(1);
 }
 
 /* ── Container principal ────────────────────────────────── */
