@@ -12,6 +12,8 @@ const translations = {
     // Sobre nós
     'about.title': 'Sobre nós',
     'about.desc':  'A nossa empresa de construção é especializada em remodelações residenciais e comerciais e obras públicas. Com uma equipa de profissionais altamente qualificados, oferecemos uma gama completa de serviços de remodelação, desde a concepção do projeto até à sua conclusão. A nossa abordagem centrada no cliente garante que cada projeto é realizado de acordo com as especificações do cliente, dentro do prazo e do orçamento. Utilizamos materiais de alta qualidade e as mais recentes tecnologias de construção para garantir que cada remodelação aumenta o valor e a funcionalidade do seu espaço. Seja uma simples renovação de casa de banho ou uma remodelação completa da casa, estamos comprometidos em fornecer um serviço excecional que excede as expectativas dos nossos clientes.',
+    'about.area.label': 'Área de atuação:',
+    'about.area.value': 'Lisboa, Ourém e Santarém',
 
     // Que trabalhos realizamos
     'works.title':    'Que trabalhos realizamos?',
@@ -94,6 +96,8 @@ const translations = {
     // About
     'about.title': 'About us',
     'about.desc':  'Our construction company specialises in residential and commercial renovation and public works. With a team of highly qualified professionals, we offer a complete range of renovation services, from project design through to completion. Our client-centred approach ensures that every project is delivered to the client\'s specifications, on time and within budget. We use high-quality materials and the latest construction technologies to ensure that every renovation increases the value and functionality of your space. Whether it\'s a simple bathroom renovation or a complete home remodel, we are committed to delivering exceptional service that exceeds our clients\' expectations.',
+    'about.area.label': 'Service area:',
+    'about.area.value': 'Lisbon, Ourém and Santarém',
 
     // Works
     'works.title':    'What work do we do?',
