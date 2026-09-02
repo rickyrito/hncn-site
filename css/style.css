@@ -1970,6 +1970,7 @@ section{
 }
 
 .trabalhos-lista {
+    counter-reset: trabalho;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 20px;
@@ -1978,12 +1979,13 @@ section{
 }
 
 .trabalho-item {
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
     gap: 4px;
-    padding: 28px 20px 24px;
+    padding: 30px 22px 26px;
     background: #fff;
     border: 1px solid #e8e3d8;
     border-top: 3px solid transparent;
@@ -1997,23 +1999,46 @@ section{
     border-top-color: #c9903f;
 }
 
+.trabalho-item::before {
+    counter-increment: trabalho;
+    content: counter(trabalho, decimal-leading-zero);
+    position: absolute;
+    top: 16px;
+    left: 20px;
+    font-family: 'Fraunces', Georgia, serif;
+    font-size: 12.5px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    color: #c9903f;
+    opacity: 0.75;
+}
+
 .trabalho-item i {
     display: flex;
     align-items: center;
     justify-content: center;
     width: 56px;
     height: 56px;
-    margin-bottom: 12px;
+    margin-bottom: 14px;
     border-radius: 50%;
-    background: #f5efe4;
-    font-size: 22px;
+    background: transparent;
+    border: 1.5px solid #c9903f;
+    font-size: 20px;
     color: #9c6a24;
     flex-shrink: 0;
+    transition: background 0.25s ease, color 0.25s ease;
+}
+
+.trabalho-item:hover i {
+    background: #c9903f;
+    color: #fff;
 }
 
 .trabalho-item strong {
     display: block;
-    font-size: 15px;
+    font-family: 'Fraunces', Georgia, serif;
+    font-size: 17px;
+    font-weight: 600;
     color: #17293d;
     margin-bottom: 6px;
 }
