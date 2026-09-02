@@ -76,9 +76,6 @@
     .processo-row-num { font-size: 40px; }
     .processo-step-title { font-size: 17px; }
 
-    /* FAQ */
-    .faq h1 { font-size: 24px; }
-
     /* Contacto */
     .contact-headline { font-size: 24px; }
     .contact-subline { font-size: 14px; }
@@ -112,7 +109,7 @@
     .features-list h1,
     .screenshots h1,
     .processo h1,
-    .faq h1,
+    .faq-intro h1,
     .contact-headline { font-size: 20px; }
     .container { padding-left: 12px; padding-right: 12px; }
 }

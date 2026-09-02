@@ -55,6 +55,8 @@ const translations = {
 
     // Perguntas frequentes
     'faq.title': 'Perguntas frequentes',
+    'faq.intro': 'Ainda com dúvidas sobre como trabalhamos? Aqui ficam as respostas às perguntas mais comuns dos nossos clientes.',
+    'faq.cta': 'Falar connosco',
     'faq.1.q': 'Quanto tempo demora uma obra?',
     'faq.1.a': 'O prazo depende da dimensão e complexidade do projeto. Após a visita ao local, apresentamos um cronograma junto com o orçamento, para saber exatamente o que esperar.',
     'faq.2.q': 'Como funciona o orçamento?',
@@ -156,6 +158,8 @@ const translations = {
 
     // FAQ
     'faq.title': 'Frequently asked questions',
+    'faq.intro': 'Still have questions about how we work? Here are the answers to what our clients ask most.',
+    'faq.cta': 'Get in touch',
     'faq.1.q': 'How long does a project take?',
     'faq.1.a': 'It depends on the size and complexity of the project. After visiting the site, we provide a timeline along with the quote, so you know exactly what to expect.',
     'faq.2.q': 'How does the quote work?',
