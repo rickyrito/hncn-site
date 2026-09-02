@@ -283,7 +283,7 @@ $(document).ready(function () {
   });
 
   // Carregar galeria
-  $.getJSON('gallery.php', function(data) {
+  function renderGallery(data) {
     $('#gallery-loading').hide();
     if (!data || data.error || data.length === 0) {
       $('#gallery-grid').html('<p style="color:#999;padding:20px">Sem álbuns disponíveis.</p>');
@@ -292,9 +292,15 @@ $(document).ready(function () {
     galleryData = data;
     renderTabs();
     renderCarousel();
-  }).fail(function() {
-    $('#gallery-loading').hide();
-    $('#gallery-grid').html('<p style="color:#999;padding:20px">Não foi possível carregar o portfólio.</p>');
+  }
+
+  // gallery.php só funciona em hospedagem com PHP (produção). Em ambientes
+  // estáticos (ex: GitHub Pages) usa-se uma cópia estática de reserva.
+  $.getJSON('gallery.php', renderGallery).fail(function() {
+    $.getJSON('gallery-snapshot.json', renderGallery).fail(function() {
+      $('#gallery-loading').hide();
+      $('#gallery-grid').html('<p style="color:#999;padding:20px">Não foi possível carregar o portfólio.</p>');
+    });
   });
 
   /***************** Formulário de contacto ******************/
