@@ -1195,6 +1195,21 @@ FAQ
     flex: 0 0 30%;
     position: sticky;
     top: 110px;
+    isolation: isolate;
+}
+.faq-intro::after {
+    content: '?';
+    position: absolute;
+    top: -78px;
+    right: -18px;
+    font-family: 'Fraunces', Georgia, serif;
+    font-weight: 600;
+    font-size: 260px;
+    line-height: 1;
+    color: #f2ead9;
+    z-index: -1;
+    pointer-events: none;
+    user-select: none;
 }
 .faq-intro::before {
     content: '';
@@ -1329,7 +1344,8 @@ FAQ
 }
 @media (max-width: 900px) {
     .faq-layout { flex-direction: column; gap: 36px; }
-    .faq-intro { position: static; flex-basis: auto; }
+    .faq-intro { position: relative; top: auto; flex-basis: auto; }
+    .faq-intro::after { font-size: 160px; top: -38px; right: -6px; }
 }
 @media (max-width: 768px) {
     .faq { padding: 44px 0; }
