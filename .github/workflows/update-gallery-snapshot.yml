@@ -1,0 +1,60 @@
+name: Atualizar cópia do portfólio
+
+# Vai buscar o gallery.php de produção (www.hncn.pt) periodicamente e
+# guarda o resultado em gallery-snapshot.json — usado como reserva pelo
+# GitHub Pages, que não executa PHP e por isso não consegue correr o
+# gallery.php diretamente. A produção continua sempre a mostrar os
+# dados ao vivo; isto serve só o link de pré-visualização.
+#
+# Não precisa de segredos: gallery.php é um endpoint público, sem
+# autenticação — só se copia a resposta, não se lida com tokens do
+# Facebook aqui.
+
+on:
+  schedule:
+    - cron: '0 */6 * * *'   # a cada 6 horas
+  workflow_dispatch: {}      # permite correr manualmente pelo GitHub
+
+permissions:
+  contents: write
+
+jobs:
+  update-snapshot:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: newimage
+
+      - name: Obter dados do portfólio (produção)
+        run: |
+          curl -sSL --fail --max-time 30 "https://www.hncn.pt/gallery.php" -o gallery-snapshot.new.json
+
+      - name: Validar JSON antes de substituir
+        run: |
+          python3 - <<'EOF'
+          import json, sys
+          try:
+              data = json.load(open("gallery-snapshot.new.json"))
+          except Exception as e:
+              print("JSON inválido:", e)
+              sys.exit(1)
+          if not isinstance(data, list) or len(data) == 0:
+              print("Resposta vazia ou com erro — a ignorar esta atualização.")
+              sys.exit(1)
+          print("OK:", len(data), "álbum(ns)")
+          EOF
+
+      - name: Substituir e publicar se houver alterações
+        run: |
+          mv gallery-snapshot.new.json gallery-snapshot.json
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add gallery-snapshot.json
+          if git diff --cached --quiet; then
+            echo "Sem alterações — nada a publicar."
+          else
+            git commit -m "chore: atualizar cópia do portfólio (automático)"
+            git push origin newimage
+          fi
