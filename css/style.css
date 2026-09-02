@@ -1,35 +1,23 @@
 /* ==========================================================================
-Botão de língua PT/EN
+Botão de língua PT/EN (vive na barra de navegação fixa)
 ========================================================================== */
-.overlay-lang {
-    display: none;
-    margin-top: 24px;
-    text-align: center;
-}
-.overlay-boxify.open .overlay-lang {
-    display: block;
-}
 .lang-switcher {
-    position: static !important;
     background: transparent;
-    color: #fff;
-    border: 1px solid rgba(255,255,255,0.5);
+    color: #17293d;
+    border: 1px solid rgba(23,41,61,0.3);
     border-radius: 4px;
-    padding: 6px 18px;
-    font-size: 13px;
+    padding: 5px 14px;
+    font-size: 12px;
     font-weight: 700;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
     cursor: pointer;
-    transition: background 0.2s, border-color 0.2s;
+    transition: background 0.2s, border-color 0.2s, color 0.2s;
+    flex-shrink: 0;
 }
 .lang-switcher:hover {
     background: #c9903f;
     border-color: #c9903f;
-}
-/* Esconder botão de língua fora do overlay */
-body > .lang-switcher,
-body > button.lang-switcher {
-    display: none !important;
+    color: #fff;
 }
 
 /* ! normalize.css v1.0.0 | MIT License | git.io/normalize */
@@ -580,18 +568,105 @@ Buttons
 /* ==========================================================================
 Navigation
 ========================================================================== */
+.site-nav {
+    position: sticky;
+    top: 0;
+    z-index: 100000;
+    background: rgba(250, 248, 244, 0.96);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    box-shadow: 0 2px 14px rgba(23,41,61,0.1);
+}
+.site-nav-inner {
+    max-width: 1240px;
+    margin: 0 auto;
+    height: 72px;
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.site-nav-logo {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+.site-nav-logo img {
+    height: 38px;
+    width: auto;
+    display: block;
+}
+.site-nav-links {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    margin-left: 16px;
+}
+.site-nav-links a {
+    color: #17293d;
+    text-decoration: none;
+    font-size: 13.5px;
+    font-weight: 700;
+    white-space: nowrap;
+    transition: color 0.2s;
+}
+.site-nav-links a:hover, .site-nav-links a:focus {
+    color: #c9903f;
+    text-decoration: none;
+}
+.site-nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-left: auto;
+}
+.site-nav-phone {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: #17293d;
+    font-weight: 700;
+    font-size: 13.5px;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: color 0.2s;
+}
+.site-nav-phone:hover, .site-nav-phone:focus {
+    color: #c9903f;
+    text-decoration: none;
+}
+.site-nav-cta {
+    display: inline-flex;
+    align-items: center;
+    height: 38px;
+    padding: 0 18px;
+    background: #c9903f;
+    color: #17293d;
+    font-weight: 700;
+    font-size: 13px;
+    border-radius: 4px;
+    text-decoration: none;
+    white-space: nowrap;
+    flex-shrink: 0;
+    transition: background 0.2s;
+}
+.site-nav-cta:hover, .site-nav-cta:focus {
+    background: #dba759;
+    color: #17293d;
+    text-decoration: none;
+}
+#home, #features-intro, #trabalhos, #screenshots, #processo, #contact {
+    scroll-margin-top: 80px;
+}
 .nav-toggle {
-    position: fixed;
-    top: 16px;
-    right: 20px;
-    z-index: 999999;
-    width: 48px;
-    height: 48px;
+    position: relative;
+    display: none;
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
     cursor: pointer;
-    background: rgba(30, 58, 82, 0.75);
+    background: #17293d;
     border-radius: 6px;
-    backdrop-filter: blur(6px);
-    -webkit-backdrop-filter: blur(6px);
 }
 .nav-toggle:focus {
     outline: none;

@@ -75,6 +75,7 @@ const translations = {
     'nav.portfolio': 'Portofólio',
     'nav.process':   'Processo',
     'nav.contact':   'Contactos',
+    'nav.cta':       'Pedir orçamento',
 
     // WhatsApp
     'whatsapp.text': 'Fale connosco',
@@ -156,6 +157,7 @@ const translations = {
     'nav.portfolio': 'Portfolio',
     'nav.process':   'Process',
     'nav.contact':   'Contact',
+    'nav.cta':       'Get a quote',
 
     // WhatsApp
     'whatsapp.text': 'Talk to us',

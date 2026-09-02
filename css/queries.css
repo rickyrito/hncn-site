@@ -7,6 +7,18 @@
     .overlay nav { font-size: 36px; }
     .overlay ul li a { font-size: 14px; padding: 14px 0; }
     .trabalhos-lista { grid-template-columns: repeat(2, 1fr); }
+
+    /* Barra de navegação — só logo, língua e menu de hambúrguer */
+    .site-nav-inner { height: 60px; padding: 0 16px; }
+    .site-nav-logo img { height: 30px; }
+    .site-nav-links,
+    .site-nav-phone,
+    .site-nav-cta { display: none; }
+    .site-nav-actions { gap: 10px; }
+    .nav-toggle { display: inline-flex; align-items: center; justify-content: center; }
+    #home, #features-intro, #trabalhos, #screenshots, #processo, #contact {
+        scroll-margin-top: 68px;
+    }
 }
 
 /* ============================================================
