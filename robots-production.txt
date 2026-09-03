@@ -1,0 +1,17 @@
+# Este ficheiro NÃO está ativo — é só referência.
+#
+# O robots.txt deste branch (pré-visualização) continua propositadamente
+# fechado (Disallow: /), como foi pedido. Quando a HNCN estiver pronta para
+# publicar este redesign a sério em produção (www.hncn.pt), usa o conteúdo
+# abaixo como o robots.txt real:
+#
+# ---------------------------------------------------------------
+User-agent: *
+Allow: /
+
+Sitemap: https://www.hncn.pt/sitemap.xml
+# ---------------------------------------------------------------
+#
+# E remove também a linha
+#   <meta name="robots" content="noindex, nofollow">
+# do <head> do index.html — é a segunda (e última) coisa a mudar.
