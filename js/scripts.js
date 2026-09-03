@@ -96,18 +96,24 @@ $(document).ready(function () {
 
   /***************** Nav — menu overlay ******************/
 
+  function setMobileMenuOpen(isOpen) {
+    $('.nav-toggle')
+      .toggleClass('active', isOpen)
+      .attr('aria-expanded', isOpen)
+      .attr('aria-label', isOpen ? 'Fechar menu' : 'Abrir menu');
+    $('.overlay-boxify').toggleClass('open', isOpen);
+  }
+
   $('.nav-toggle').click(function (e) {
     e.preventDefault();
-    $(this).toggleClass('active');
-    $('.overlay-boxify').toggleClass('open');
+    setMobileMenuOpen(!$(this).hasClass('active'));
   });
 
   $('.overlay ul li a').click(function (e) {
     e.preventDefault();
     e.stopPropagation();
     var hash = this.getAttribute('href');
-    $('.nav-toggle').removeClass('active');
-    $('.overlay-boxify').removeClass('open');
+    setMobileMenuOpen(false);
     // aguarda o fecho do overlay antes de fazer scroll
     setTimeout(function () {
       var target = document.querySelector(hash);
@@ -118,8 +124,7 @@ $(document).ready(function () {
   });
 
   $('.overlay').click(function () {
-    $('.nav-toggle').removeClass('active');
-    $('.overlay-boxify').removeClass('open');
+    setMobileMenuOpen(false);
   });
 
   /***************** FAQ — acordeão ******************/
