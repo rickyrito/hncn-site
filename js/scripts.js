@@ -190,8 +190,8 @@ $(document).ready(function () {
 
     // Wrapper com posição relativa para as setas laterais
     var wrap    = $('<div class="gallery-carousel-wrap">');
-    var prevBtn = $('<button class="gallery-nav-btn gallery-nav-prev" id="carousel-prev">').html('&#8249;');
-    var nextBtn = $('<button class="gallery-nav-btn gallery-nav-next" id="carousel-next">').html('&#8250;');
+    var prevBtn = $('<button class="gallery-nav-btn gallery-nav-prev" id="carousel-prev" aria-label="Fotos anteriores">').html('&#8249;');
+    var nextBtn = $('<button class="gallery-nav-btn gallery-nav-next" id="carousel-next" aria-label="Mais fotos">').html('&#8250;');
 
     // Track
     var trackWrap = $('<div class="carousel-track-wrap">');
