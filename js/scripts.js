@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', function() {
 /***************** Reveal ao scroll (fade/slide-in) ******************/
 
 document.addEventListener('DOMContentLoaded', function () {
-  var revealSelectors = '.trabalho-item, .processo-row, .faq-item, .contact-col, .features-info-content, .features-section-h1, .features-list h1, .screenshots h1, .processo h1, .faq h1, .contact-headline';
+  var revealSelectors = '.trabalho-item, .processo-row, .faq-item, .contact-col, .features-info-content, .features-section-h1, .features-list h2, .screenshots h2, .processo h2, .faq h2, .contact-headline';
   var revealEls = document.querySelectorAll(revealSelectors);
 
   if (!('IntersectionObserver' in window) || revealEls.length === 0) return;

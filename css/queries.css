@@ -59,7 +59,7 @@
     .features-desc { font-size: 13px; }
 
     /* Que trabalhos realizamos */
-    .features-list h1 { font-size: 24px; }
+    .features-list h2 { font-size: 24px; }
     .trabalhos-lista { grid-template-columns: 1fr; padding: 0 4px; gap: 12px; }
     .trabalho-item { padding: 18px 16px; }
     .trabalho-item i { width: 46px; height: 46px; font-size: 18px; margin-bottom: 8px; }
@@ -67,12 +67,12 @@
     .trabalho-item p { font-size: 13px; margin: 4px 0 0; }
 
     /* Portfólio */
-    .screenshots h1 { font-size: 24px; }
+    .screenshots h2 { font-size: 24px; }
     .fb-feed-wrap { width: 100%; overflow: hidden; }
     #fb-feed { width: 100% !important; max-width: 100% !important; }
 
     /* Como trabalhamos */
-    .processo h1 { font-size: 24px; }
+    .processo h2 { font-size: 24px; }
     .processo-header { margin-bottom: 24px; }
     .processo-row-num { font-size: 40px; }
     .processo-step-title { font-size: 17px; }
@@ -107,10 +107,10 @@
 @media screen and (max-width: 480px) {
     .hero h1 { font-size: 19px; }
     .features-section-h1,
-    .features-list h1,
-    .screenshots h1,
-    .processo h1,
-    .faq-intro h1,
+    .features-list h2,
+    .screenshots h2,
+    .processo h2,
+    .faq-intro h2,
     .contact-headline { font-size: 20px; }
     .container { padding-left: 12px; padding-right: 12px; }
 }

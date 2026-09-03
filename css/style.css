@@ -450,11 +450,12 @@ table {
 /* ==========================================================================
 Global Styles
 ========================================================================== */
-h1, .hero h1,
+h1, h2, .hero h1,
 .features-section-h1,
-.features-list h1,
-.screenshots h1,
-.processo h1,
+.features-list h2,
+.screenshots h2,
+.processo h2,
+.faq-intro h2,
 .contact-headline {
     font-family: 'Fraunces', Georgia, serif;
     letter-spacing: 0.2px;
@@ -982,7 +983,7 @@ Features List
     min-height: 100dvh;
     background-color: #f5efe4;
 }
-.features-list h1 {
+.features-list h2 {
     margin: 0 0 24px 0;
     padding: 0;
     color: #17293d;
@@ -992,7 +993,7 @@ Features List
 }
 .features-list p {
     margin-bottom: 20px;
-    color: #778899;
+    color: #5c6b78;
 }
 .feature-content {
     display: inline-block;
@@ -1103,7 +1104,7 @@ Processo
     min-height: 100dvh;
     padding: 30px 0;
 }
-.processo h1 {
+.processo h2 {
     font-size: 32px;
     font-weight: 700;
     color: #17293d;
@@ -1225,7 +1226,7 @@ FAQ
     background: #c9903f;
     margin-bottom: 22px;
 }
-.faq-intro h1 {
+.faq-intro h2 {
     font-size: 32px;
     font-weight: 600;
     color: #17293d;
@@ -1233,7 +1234,7 @@ FAQ
     margin: 0 0 14px;
 }
 .faq-intro-text {
-    color: #778899;
+    color: #5c6b78;
     font-size: 14.5px;
     line-height: 1.75;
     margin: 0 0 22px;
@@ -1355,7 +1356,7 @@ FAQ
 }
 @media (max-width: 768px) {
     .faq { padding: 44px 0; }
-    .faq-intro h1 { font-size: 24px; }
+    .faq-intro h2 { font-size: 24px; }
     .faq-q-text { font-size: 16px; }
     .faq-q-num { width: 22px; font-size: 12px; }
     .faq-question { gap: 14px; padding: 20px 0; }
@@ -1528,7 +1529,7 @@ Screenshots Intro
 }
 .screenshots-intro p {
     margin-bottom: 25px;
-    color: #778899;
+    color: #5c6b78;
 }
 
 
@@ -1541,7 +1542,7 @@ Screenshots
     min-height: 100dvh;
     background-color: #f8f5ef;
 }
-.screenshots h1 {
+.screenshots h2 {
     margin-bottom: 24px;
     color: #17293d;
     font-weight: 700;
@@ -1550,7 +1551,7 @@ Screenshots
 }
 .screenshots p {
     margin-bottom: 25px;
-    color: #778899;
+    color: #5c6b78;
 }
 
 .screenshots ul {
@@ -1679,7 +1680,7 @@ footer {
     width: 130px;
 }
 .footer-tagline {
-    color: #778899;
+    color: #5c6b78;
     font-size: 13px;
     max-width: 280px;
     margin: 0;
