@@ -482,7 +482,7 @@ p {
     line-height: 25px;
 }
 a {
-    color: #c9903f
+    color: #9c6a24
 }
 a:hover, a:focus {
     color: #c9903f;
@@ -1243,7 +1243,7 @@ FAQ
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    color: #c9903f;
+    color: #9c6a24;
     font-weight: 700;
     font-size: 13.5px;
     letter-spacing: 0.3px;
@@ -1493,7 +1493,7 @@ Contact
 }
 .contact-form .contact-form-group input::placeholder,
 .contact-form .contact-form-group textarea::placeholder {
-    color: rgba(255,255,255,0.4);
+    color: rgba(255,255,255,0.6);
 }
 .contact-form .contact-form-group input:focus,
 .contact-form .contact-form-group textarea:focus {
@@ -1699,7 +1699,7 @@ footer {
 }
 .footer-contact a:hover { color: #9c6a24; }
 .footer-contact i {
-    color: #c9903f;
+    color: #9c6a24;
     width: 16px;
     text-align: center;
     margin-right: 4px;
@@ -1724,7 +1724,7 @@ footer {
 }
 .footer-social a:hover { background: #c9903f; color: #fff; }
 .footer-copy {
-    color: #999;
+    color: #666;
     font-size: 13px;
     margin: 0;
     text-align: center;
