@@ -758,11 +758,7 @@ Hero
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-right: 40px;
-    padding: 26px 34px;
-    background: rgba(255,255,255,0.97);
-    border-radius: 16px;
-    box-shadow: 0 14px 34px rgba(0,0,0,0.28);
+    padding-right: 40px;
 }
 .hero-logo-img {
     width: 200px;
@@ -826,8 +822,7 @@ Hero
         gap: 24px;
     }
     .hero-divider-v { display: none; }
-    .hero-logo-side { margin-right: 0; padding: 20px 28px; }
-    .hero-logo-img { width: 160px; }
+    .hero-logo-side { padding-right: 0; }
     .hero-text-side { padding-left: 0; }
     .hero-btns { justify-content: center; }
 }

@@ -43,7 +43,7 @@
     .hero { min-height: calc(100dvh - 60px); }
     .hero-split { flex-direction: column; text-align: center; gap: 20px; padding: 40px 16px; }
     .hero-divider-v { display: none; }
-    .hero-logo-side { margin-right: 0; padding: 18px 26px; }
+    .hero-logo-side { padding-right: 0; }
     .hero-logo-img { width: 140px; }
     .hero-text-side { padding-left: 0; }
     .hero h1 { font-size: 22px; }
