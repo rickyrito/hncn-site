@@ -1,8 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 190">
   <!-- Arco superior -->
-  <path d="M 35 111 Q 170 -15 304 92" fill="none" stroke="#ffffff" stroke-width="9" stroke-linecap="round"/>
+  <path d="M 32 105 Q 170 -15 308 88" fill="none" stroke="#ffffff" stroke-width="9" stroke-linecap="round"/>
   <!-- Arco inferior -->
-  <path d="M 29 99 Q 170 225 312 84" fill="none" stroke="#ffffff" stroke-width="9" stroke-linecap="round"/>
+  <path d="M 32 105 Q 170 225 308 88" fill="none" stroke="#ffffff" stroke-width="9" stroke-linecap="round"/>
   <!-- Texto hncn -->
   <text x="170" y="115" font-family="Arial, Helvetica, sans-serif" font-size="66" font-weight="300" fill="#ffffff" text-anchor="middle" letter-spacing="1">hncn</text>
   <!-- Texto construções -->
