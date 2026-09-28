@@ -761,7 +761,7 @@ Hero
     padding-right: 40px;
 }
 .hero-logo-img {
-    width: 200px;
+    width: 240px;
     display: block;
 }
 .hero-divider-v {
@@ -778,12 +778,13 @@ Hero
 .hero h1 {
     margin: 0 0 10px 0;
     font-weight: 500;
-    font-size: 34px;
+    font-size: 38px;
     line-height: 1.25;
 }
 .hero-sub {
     color: rgba(255,255,255,0.55);
-    font-size: 11px;
+    font-size: 13px;
+    font-weight: 700;
     letter-spacing: 4px;
     text-transform: uppercase;
     margin: 0 0 24px;
@@ -805,12 +806,12 @@ Hero
     display: flex;
     align-items: center;
     gap: 8px;
-    font-size: 12.5px;
+    font-size: 13.5px;
     color: rgba(255,255,255,0.85);
 }
 .hero-trust i {
     color: #c9903f;
-    font-size: 13px;
+    font-size: 14px;
 }
 @media (max-width: 768px) {
     .hero-trust { justify-content: center; }
