@@ -761,7 +761,7 @@ Hero
     padding-right: 40px;
 }
 .hero-logo-img {
-    width: 240px;
+    width: 269px;
     display: block;
 }
 .hero-divider-v {
@@ -778,7 +778,7 @@ Hero
 .hero h1 {
     margin: 0 0 10px 0;
     font-weight: 500;
-    font-size: 38px;
+    font-size: 42.5px;
     line-height: 1.25;
 }
 .hero-sub {
@@ -806,12 +806,12 @@ Hero
     display: flex;
     align-items: center;
     gap: 8px;
-    font-size: 13.5px;
+    font-size: 16px;
     color: rgba(255,255,255,0.85);
 }
 .hero-trust i {
     color: #c9903f;
-    font-size: 14px;
+    font-size: 16.8px;
 }
 @media (max-width: 768px) {
     .hero-trust { justify-content: center; }
