@@ -5,10 +5,15 @@ const translations = {
     'hero.sub':         'Construções Lda',
     'hero.btn.contact': 'Contacte-nos',
     'hero.btn.about':   'Sobre a HNCN',
+    'hero.trust.1':     'Equipa profissional e experiente',
+    'hero.trust.2':     'Acompanhamento em cada fase',
+    'hero.trust.3':     'Prazos e orçamentos cumpridos',
 
     // Sobre nós
     'about.title': 'Sobre nós',
     'about.desc':  'A nossa empresa de construção é especializada em remodelações residenciais e comerciais e obras públicas. Com uma equipa de profissionais altamente qualificados, oferecemos uma gama completa de serviços de remodelação, desde a concepção do projeto até à sua conclusão. A nossa abordagem centrada no cliente garante que cada projeto é realizado de acordo com as especificações do cliente, dentro do prazo e do orçamento. Utilizamos materiais de alta qualidade e as mais recentes tecnologias de construção para garantir que cada remodelação aumenta o valor e a funcionalidade do seu espaço. Seja uma simples renovação de casa de banho ou uma remodelação completa da casa, estamos comprometidos em fornecer um serviço excecional que excede as expectativas dos nossos clientes.',
+    'about.area.label': 'Área de atuação:',
+    'about.area.value': 'Lisboa, Ourém e Santarém',
 
     // Que trabalhos realizamos
     'works.title':    'Que trabalhos realizamos?',
@@ -31,6 +36,7 @@ const translations = {
 
     // Portfólio
     'portfolio.title': 'Portofólio',
+    'portfolio.fb_link': 'Ver mais no Facebook',
 
     // Como trabalhamos
     'process.title':    'Como trabalhamos',
@@ -47,6 +53,23 @@ const translations = {
     'process.4.title':  'Entrega',
     'process.4.desc':   'Entregamos a obra concluída, com acompanhamento pós-entrega e garantia de qualidade.',
 
+    // Perguntas frequentes
+    'faq.title': 'Perguntas frequentes',
+    'faq.intro': 'Ainda com dúvidas sobre como trabalhamos? Reunimos aqui as respostas às perguntas mais colocadas pelos nossos clientes.',
+    'faq.cta': 'Falar connosco',
+    'faq.1.q': 'Quanto tempo demora uma obra?',
+    'faq.1.a': 'O prazo varia consoante a dimensão e a complexidade da obra. Após a visita técnica ao local, apresentamos um cronograma detalhado juntamente com o orçamento, para que saiba exatamente o que esperar em cada fase.',
+    'faq.2.q': 'Como funciona o orçamento?',
+    'faq.2.a': 'Antes de iniciarmos qualquer obra, apresentamos um orçamento detalhado e sem compromisso, com o valor total previsto. Qualquer alteração ao que foi acordado é sempre discutida e aprovada consigo antecipadamente.',
+    'faq.3.q': 'Dão garantia sobre o trabalho realizado?',
+    'faq.3.a': 'Sim. Todo o trabalho realizado é acompanhado após a entrega da obra, e as condições de garantia são explicadas de forma clara no momento do orçamento.',
+    'faq.4.q': 'Em que zonas trabalham?',
+    'faq.4.a': 'Atuamos principalmente nas zonas de Lisboa, Ourém e Santarém.',
+    'faq.5.q': 'Fazem obras públicas e privadas?',
+    'faq.5.a': 'Sim. A nossa atividade abrange tanto obras privadas — remodelações residenciais e comerciais — como obras públicas, sempre em conformidade com as normas e cadernos de encargos aplicáveis.',
+    'faq.6.q': 'Como funciona o pagamento?',
+    'faq.6.a': 'As condições de pagamento, incluindo um eventual sinal inicial, são definidas e acordadas consigo no momento do orçamento, antes do início dos trabalhos.',
+
     // Contacto
     'contact.headline':      'Pronto para começar o seu projeto?',
     'contact.subline':       'Fale connosco — respondemos rapidamente e sem compromisso.',
@@ -62,6 +85,7 @@ const translations = {
     'contact.error':         'Erro ao enviar. Tente novamente ou contacte-nos diretamente.',
 
     // Footer
+    'footer.tagline': 'Construção e remodelação com rigor, confiança e cuidado ao detalhe.',
     'footer.copy': '© 2026 HNCN Construções Lda. Todos os direitos reservados.',
 
     // Overlay nav
@@ -70,7 +94,9 @@ const translations = {
     'nav.services':  'Serviços',
     'nav.portfolio': 'Portofólio',
     'nav.process':   'Processo',
+    'nav.faq':       'FAQ',
     'nav.contact':   'Contactos',
+    'nav.cta':       'Pedir orçamento',
 
     // WhatsApp
     'whatsapp.text': 'Fale connosco',
@@ -82,10 +108,15 @@ const translations = {
     'hero.sub':         'Construction Ltd',
     'hero.btn.contact': 'Contact us',
     'hero.btn.about':   'About HNCN',
+    'hero.trust.1':     'Experienced, professional team',
+    'hero.trust.2':     'Support at every step',
+    'hero.trust.3':     'Deadlines & budgets honoured',
 
     // About
     'about.title': 'About us',
     'about.desc':  'Our construction company specialises in residential and commercial renovation and public works. With a team of highly qualified professionals, we offer a complete range of renovation services, from project design through to completion. Our client-centred approach ensures that every project is delivered to the client\'s specifications, on time and within budget. We use high-quality materials and the latest construction technologies to ensure that every renovation increases the value and functionality of your space. Whether it\'s a simple bathroom renovation or a complete home remodel, we are committed to delivering exceptional service that exceeds our clients\' expectations.',
+    'about.area.label': 'Service area:',
+    'about.area.value': 'Lisbon, Ourém and Santarém',
 
     // Works
     'works.title':    'What work do we do?',
@@ -108,6 +139,7 @@ const translations = {
 
     // Portfolio
     'portfolio.title': 'Portfolio',
+    'portfolio.fb_link': 'See more on Facebook',
 
     // Process
     'process.title':    'How we work',
@@ -124,6 +156,23 @@ const translations = {
     'process.4.title':  'Handover',
     'process.4.desc':   'We deliver the completed project with post-handover support and quality guarantee.',
 
+    // FAQ
+    'faq.title': 'Frequently asked questions',
+    'faq.intro': "Still have questions about how we work? We've gathered the answers our clients ask us most often.",
+    'faq.cta': 'Get in touch',
+    'faq.1.q': 'How long does a project take?',
+    'faq.1.a': 'The timeline varies depending on the size and complexity of the project. After a technical site visit, we provide a detailed schedule together with the quote, so you know exactly what to expect at every stage.',
+    'faq.2.q': 'How does the quote work?',
+    'faq.2.a': 'Before starting any work, we provide a detailed, no-obligation quote with the total expected cost. Any change to what was agreed is always discussed and approved with you in advance.',
+    'faq.3.q': 'Do you guarantee the work?',
+    'faq.3.a': 'Yes. All completed work is followed up after handover, and warranty terms are clearly explained when we provide the quote.',
+    'faq.4.q': 'What areas do you cover?',
+    'faq.4.a': 'We mainly work in the Lisbon, Ourém and Santarém areas.',
+    'faq.5.q': 'Do you do public and private works?',
+    'faq.5.a': 'Yes. Our work covers both private projects — residential and commercial renovation — and public works, always in compliance with applicable regulations and specifications.',
+    'faq.6.q': 'How does payment work?',
+    'faq.6.a': 'Payment terms, including any initial deposit, are defined and agreed with you when we provide the quote, before work begins.',
+
     // Contact
     'contact.headline':      'Ready to start your project?',
     'contact.subline':       'Get in touch — we respond quickly and with no obligation.',
@@ -139,6 +188,7 @@ const translations = {
     'contact.error':         'Error sending message. Please try again or contact us directly.',
 
     // Footer
+    'footer.tagline': 'Construction and renovation with rigour, trust and attention to detail.',
     'footer.copy': '© 2026 HNCN Construções Lda. All rights reserved.',
 
     // Nav
@@ -147,7 +197,9 @@ const translations = {
     'nav.services':  'Services',
     'nav.portfolio': 'Portfolio',
     'nav.process':   'Process',
+    'nav.faq':       'FAQ',
     'nav.contact':   'Contact',
+    'nav.cta':       'Get a quote',
 
     // WhatsApp
     'whatsapp.text': 'Talk to us',

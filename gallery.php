@@ -4,8 +4,11 @@ require_once __DIR__ . '/fb-config.php';
 header('Content-Type: application/json');
 header('Access-Control-Allow-Origin: *');
 
-// Flush forçado: apaga cache e reconstrói
-if (isset($_GET['flush'])) {
+// Flush forçado: apaga cache e reconstrói. Só com a chave certa
+// (FLUSH_KEY em fb-config.php), para que estranhos não possam forçar
+// chamadas repetidas à API do Facebook.
+if (isset($_GET['flush']) && defined('FLUSH_KEY') && FLUSH_KEY !== ''
+    && hash_equals(FLUSH_KEY, (string)$_GET['flush'])) {
     @unlink(CACHE_FILE);
 }
 
@@ -20,7 +23,7 @@ function fb_get($url) {
     $ch = curl_init($url);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
     curl_setopt($ch, CURLOPT_TIMEOUT, 10);
-    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, true);
     curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
     $res = curl_exec($ch);
     curl_close($ch);
