@@ -1,0 +1,20 @@
+# ── Segurança ────────────────────────────────────────────────────────────────
+
+# Não listar o conteúdo das pastas
+Options -Indexes
+
+# Bloquear ficheiros e pastas ocultos (.cpanel, .cphorde, .git, .env, ...),
+# exceto .well-known (necessário para renovar o certificado SSL)
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteRule "(^|/)\.(?!well-known(/|$))" - [F,L]
+</IfModule>
+
+# Ficheiros internos: configuração, token do Facebook, cache, dados do servidor
+<FilesMatch "^(fb-config\.php|smtp-config\.php|fb-token\.json|gallery-cache\.json|.*\.(sqlite|sql|log|lock|ini|bak|md|yml))$">
+  Require all denied
+</FilesMatch>
+
+# HTTPS: ativar em cPanel → Domínios → "Force HTTPS Redirect" (não aqui,
+# porque o servidor tem nginx à frente do Apache e uma regra aqui pode
+# causar redirecionamentos em ciclo).

@@ -41,6 +41,31 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
+/***************** Reveal ao scroll (fade/slide-in) ******************/
+
+document.addEventListener('DOMContentLoaded', function () {
+  var revealSelectors = '.trabalho-item, .processo-row, .faq-item, .contact-col, .features-info-content, .features-section-h1, .features-list h2, .screenshots h2, .processo h2, .faq h2, .contact-headline';
+  var revealEls = document.querySelectorAll(revealSelectors);
+
+  if (!('IntersectionObserver' in window) || revealEls.length === 0) return;
+
+  revealEls.forEach(function (el, i) {
+    el.classList.add('reveal');
+    el.style.transitionDelay = (i % 4) * 60 + 'ms';
+  });
+
+  var observer = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+
+  revealEls.forEach(function (el) { observer.observe(el); });
+});
+
 $(document).ready(function () {
 
   /***************** Waypoints — animações ao scroll ******************/
@@ -71,18 +96,24 @@ $(document).ready(function () {
 
   /***************** Nav — menu overlay ******************/
 
+  function setMobileMenuOpen(isOpen) {
+    $('.nav-toggle')
+      .toggleClass('active', isOpen)
+      .attr('aria-expanded', isOpen)
+      .attr('aria-label', isOpen ? 'Fechar menu' : 'Abrir menu');
+    $('.overlay-boxify').toggleClass('open', isOpen);
+  }
+
   $('.nav-toggle').click(function (e) {
     e.preventDefault();
-    $(this).toggleClass('active');
-    $('.overlay-boxify').toggleClass('open');
+    setMobileMenuOpen(!$(this).hasClass('active'));
   });
 
   $('.overlay ul li a').click(function (e) {
     e.preventDefault();
     e.stopPropagation();
     var hash = this.getAttribute('href');
-    $('.nav-toggle').removeClass('active');
-    $('.overlay-boxify').removeClass('open');
+    setMobileMenuOpen(false);
     // aguarda o fecho do overlay antes de fazer scroll
     setTimeout(function () {
       var target = document.querySelector(hash);
@@ -93,8 +124,16 @@ $(document).ready(function () {
   });
 
   $('.overlay').click(function () {
-    $('.nav-toggle').removeClass('active');
-    $('.overlay-boxify').removeClass('open');
+    setMobileMenuOpen(false);
+  });
+
+  /***************** FAQ — acordeão ******************/
+
+  $('.faq-question').on('click', function () {
+    var $item = $(this).closest('.faq-item');
+    var isOpen = $item.hasClass('open');
+    $item.toggleClass('open');
+    $(this).attr('aria-expanded', !isOpen);
   });
 
   /***************** Smooth Scrolling — força scroll ao topo do elemento ******************/
@@ -120,7 +159,7 @@ $(document).ready(function () {
     var w = $(window).width();
     if (w < 576) return 1;
     if (w < 992) return 2;
-    return 4;
+    return 3;
   }
 
   function renderTabs() {
@@ -151,8 +190,8 @@ $(document).ready(function () {
 
     // Wrapper com posição relativa para as setas laterais
     var wrap    = $('<div class="gallery-carousel-wrap">');
-    var prevBtn = $('<button class="gallery-nav-btn gallery-nav-prev" id="carousel-prev">').html('&#8249;');
-    var nextBtn = $('<button class="gallery-nav-btn gallery-nav-next" id="carousel-next">').html('&#8250;');
+    var prevBtn = $('<button class="gallery-nav-btn gallery-nav-prev" id="carousel-prev" aria-label="Fotos anteriores">').html('&#8249;');
+    var nextBtn = $('<button class="gallery-nav-btn gallery-nav-next" id="carousel-next" aria-label="Mais fotos">').html('&#8250;');
 
     // Track
     var trackWrap = $('<div class="carousel-track-wrap">');
@@ -249,7 +288,7 @@ $(document).ready(function () {
   });
 
   // Carregar galeria
-  $.getJSON('gallery.php', function(data) {
+  function renderGallery(data) {
     $('#gallery-loading').hide();
     if (!data || data.error || data.length === 0) {
       $('#gallery-grid').html('<p style="color:#999;padding:20px">Sem álbuns disponíveis.</p>');
@@ -258,9 +297,15 @@ $(document).ready(function () {
     galleryData = data;
     renderTabs();
     renderCarousel();
-  }).fail(function() {
-    $('#gallery-loading').hide();
-    $('#gallery-grid').html('<p style="color:#999;padding:20px">Não foi possível carregar o portfólio.</p>');
+  }
+
+  // gallery.php só funciona em hospedagem com PHP (produção). Em ambientes
+  // estáticos (ex: GitHub Pages) usa-se uma cópia estática de reserva.
+  $.getJSON('gallery.php', renderGallery).fail(function() {
+    $.getJSON('gallery-snapshot.json', renderGallery).fail(function() {
+      $('#gallery-loading').hide();
+      $('#gallery-grid').html('<p style="color:#999;padding:20px">Não foi possível carregar o portfólio.</p>');
+    });
   });
 
   /***************** Formulário de contacto ******************/

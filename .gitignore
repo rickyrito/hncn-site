@@ -1,7 +1,26 @@
+# ── Sistema / editores ───────────────────────────────────────────────────────
 .DS_Store
+.vs/
 _notes/
 *.lock
-gallery-cache.json
-fb-token.json
+
+# ── Ficheiros da conta cPanel (pasta pessoal do servidor) ───────────────────
+.bash_logout
+.bash_profile
+.bashrc
+.kshrc
+.cagefs/
+.cl.selector/
+.cpanel/
+.cphorde/
+.softaculous/
+.contactemail
+.lastlogin
+.imunify_patch_id
+.myimunify_id
+
+# ── Segredos e dados gerados no servidor ─────────────────────────────────────
 fb-config.php
-.DS_Store
+fb-token.json
+smtp-config.php
+gallery-cache.json

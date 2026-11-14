@@ -4,8 +4,22 @@
    Tablets (max 991px)
    ============================================================ */
 @media screen and (max-width: 991px) {
-    .overlay nav { font-size: 36px; }
-    .overlay ul li a { font-size: 14px; padding: 14px 0; }
+    .overlay-links li a { font-size: 23px; padding: 17px 2px; }
+    .trabalhos-lista { grid-template-columns: repeat(2, 1fr); }
+
+    /* Barra de navegação — só logo, língua e menu de hambúrguer */
+    body { padding-top: 60px; }
+    .hero { min-height: calc(100dvh - 60px); }
+    .site-nav-inner { height: 60px; padding: 0 16px; }
+    .site-nav-logo img { height: 30px; }
+    .site-nav-links,
+    .site-nav-phone,
+    .site-nav-cta { display: none; }
+    .site-nav-actions { gap: 10px; }
+    .nav-toggle { display: inline-flex; align-items: center; justify-content: center; }
+    #home, #features-intro, #trabalhos, #screenshots, #processo, #faq, #contact {
+        scroll-margin-top: 68px;
+    }
 }
 
 /* ============================================================
@@ -26,45 +40,42 @@
     .contact-section { min-height: 100dvh; }
 
     /* Hero */
-    .hero { min-height: 100dvh; }
+    .hero { min-height: calc(100dvh - 60px); }
     .hero-split { flex-direction: column; text-align: center; gap: 20px; padding: 40px 16px; }
     .hero-divider-v { display: none; }
     .hero-logo-side { padding-right: 0; }
-    .hero-logo-img { width: 140px; }
+    .hero-logo-img { width: 188px; }
     .hero-text-side { padding-left: 0; }
-    .hero h1 { font-size: 22px; }
-    .hero-sub { font-size: 14px; }
+    .hero h1 { font-size: 27px; }
+    .hero-sub { font-size: 16px; }
     .hero-btns { justify-content: center; flex-wrap: wrap; gap: 8px; }
     .use-btn, .learn-btn { height: 40px; padding: 0 20px; font-size: 13px; }
 
     /* Sobre nós */
     .features-section-h1 { font-size: 24px; }
-    .features-bg { min-height: 200px; }
+    .features-bg { min-height: 200px; margin: 16px 16px 0; }
     .features-info-content { padding: 24px 16px; }
     .features-details { flex-direction: column; gap: 10px; }
     .features-desc { font-size: 13px; }
 
     /* Que trabalhos realizamos */
-    .features-list h1 { font-size: 24px; }
-    .trabalhos-lista { padding: 0 4px; }
-    .trabalho-item { padding: 12px 14px; gap: 12px; }
-    .trabalho-item i { font-size: 20px; }
+    .features-list h2 { font-size: 24px; }
+    .trabalhos-lista { grid-template-columns: 1fr; padding: 0 4px; gap: 12px; }
+    .trabalho-item { padding: 18px 16px; }
+    .trabalho-item i { width: 46px; height: 46px; font-size: 18px; margin-bottom: 8px; }
     .trabalho-item strong { font-size: 14px; }
     .trabalho-item p { font-size: 13px; margin: 4px 0 0; }
 
     /* Portfólio */
-    .screenshots h1 { font-size: 24px; }
+    .screenshots h2 { font-size: 24px; }
     .fb-feed-wrap { width: 100%; overflow: hidden; }
     #fb-feed { width: 100% !important; max-width: 100% !important; }
 
     /* Como trabalhamos */
-    .processo h1 { font-size: 24px; }
+    .processo h2 { font-size: 24px; }
     .processo-header { margin-bottom: 24px; }
-    .processo-steps { flex-direction: column; align-items: center; gap: 20px; }
-    .processo-connector { width: 2px; height: 24px; margin: 0; }
-    .processo-step { max-width: 280px; padding: 0 8px; }
-    .processo-icon { width: 56px; height: 56px; }
-    .processo-icon i { font-size: 22px; }
+    .processo-row-num { font-size: 40px; }
+    .processo-step-title { font-size: 17px; }
 
     /* Contacto */
     .contact-headline { font-size: 24px; }
@@ -77,11 +88,11 @@
     .contact-form .contact-form-group textarea { font-size: 16px; }
 
     /* Overlay menu */
-    .overlay nav { font-size: 28px; height: 80%; }
-    .overlay ul li a { font-size: 13px; padding: 12px 0; min-width: 100px; }
+    .overlay-links li a { font-size: 19px; gap: 12px; padding: 15px 2px; }
+    .overlay-links li a::before { font-size: 10px; }
 
     /* Footer */
-    .footer-logo img { width: 100px; }
+    .footer-logo-img { width: 100px; }
     .footer-copy { font-size: 12px; }
 
     /* WhatsApp — só ícone */
@@ -94,11 +105,12 @@
    Mobile pequeno (max 480px)
    ============================================================ */
 @media screen and (max-width: 480px) {
-    .hero h1 { font-size: 19px; }
+    .hero h1 { font-size: 23.5px; }
     .features-section-h1,
-    .features-list h1,
-    .screenshots h1,
-    .processo h1,
+    .features-list h2,
+    .screenshots h2,
+    .processo h2,
+    .faq-intro h2,
     .contact-headline { font-size: 20px; }
     .container { padding-left: 12px; padding-right: 12px; }
 }
